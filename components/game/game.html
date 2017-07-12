@@ -1,5 +1,4 @@
 <div ng-controller="GameController as g">
-	<input autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
 	<figure ng-show="g.failedLetters">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 142 277" preserveAspectRatio="xMinYMin meet">
 		>
@@ -38,12 +37,23 @@
 		</g>
 		</svg>
 	</figure>
-	<p>Failed letters: {{g.failedLetters.join(',')}}</p>
-	<ul ng-if="g.wordArray">
-		<li ng-repeat="letter in g.wordArray track by $index">_{{g.answer[$index]}}_</li>
-	</ul>
-	<p ng-if="g.loss">
-		yer lost Harry
-		<button type="button" ng-click="g.restart()" name="button">Restart</button>
-	</p>
+	<div class="missed-letters">
+		<span class="missed-letters__header">You missed:</span>
+		<p class="missed-letters__content">{{g.failedLetters.join(' ')}}</p>
+	</div>
+	<div class="answer">
+		<input class="answer__input" autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
+		<ul class="answer__list" ng-if="g.wordArray">
+			<li class="answer__items" ng-repeat="letter in g.wordArray track by $index">
+				<span class="answer__content">{{g.answer[$index]}}</span>
+			</li>
+		</ul>
+	</div>
+	<div class="overlay" ng-if="g.loss">
+			<header>
+				<h2>Game Over</h2>
+			</header>
+			<button type="button" ng-click="g.restart()" name="button">New Word</button>
+		</p>
+	</div>
 </div>
