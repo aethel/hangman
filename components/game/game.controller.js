@@ -11,9 +11,13 @@
     vm.guess = null;
     vm.keyPressed = keyPressed;
     vm.failedLetters = [];
-    vm.corpse = null;
+    vm.bodyMap = null;
     vm.bodyPart = null;
     vm.loss = false;
+		vm.displayBodypart = displayBodypart;
+		vm.restart = restart;
+
+		let bodyPartsArr = [];
 
     activate();
     createBodyMap();
@@ -30,14 +34,14 @@
         vm.guess = null;
         return;
       }
-      
+
       if (vm.word.includes(letter)) {
         vm.letterIndex = vm.word.indexOf(letter);
         vm.answer[vm.letterIndex] = letter;
       } else {
         vm.failedLetters.push(letter);
-        displayBodypart(vm.failedLetters.length);
-        vm.loss = vm.failedLetters.length === vm.corpse.size ? true : false;
+				bodyPartsArr.push(vm.bodyMap.get(vm.failedLetters.length));
+        vm.loss = vm.failedLetters.length === vm.bodyMap.size ? true : false;
       }
       vm.guess = null;
     }
@@ -58,16 +62,24 @@
     }
 
     function createBodyMap (){
-      vm.corpse = new Map();
+      vm.bodyMap = new Map();
       for (let i = 1; i < 11; i++){
-        vm.corpse.set(i,`bodypart-${i}`);
+        vm.bodyMap.set(i,`bodypart-${i}`);
       }
-      console.log(vm.corpse);
+      console.log(vm.bodyMap);
     }
 
     function displayBodypart (bodypart){
-      vm.bodyPart = vm.corpse.get(bodypart);
-    }
+			return bodyPartsArr.includes(bodypart);
+		}
+
+		function restart(){
+					vm.failedLetters = [];
+					vm.loss = false;
+					bodyPartsArr = [];
+					activate();
+		}
+		//show bodypart if function finds passed name in
 
   }
 })();
