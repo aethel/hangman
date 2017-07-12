@@ -30,7 +30,7 @@
         function checkWord(char) {
             let letter = char.toLowerCase();
 
-            if (!isNaN(letter)) {
+            if (!isNaN(letter) || hasFailed(letter)) {
                 vm.guess = null;
                 return;
             }
@@ -73,11 +73,15 @@
             return bodyPartsArr.includes(bodypart);
         }
 
+				function hasFailed (character) {
+					return vm.failedLetters.some(c => c === character);
+				}
+
         function restart() {
             vm.failedLetters = [];
             vm.loss = false;
             bodyPartsArr = [];
-            m.guess = null;
+            vm.guess = null;
             activate();
         }
     }
