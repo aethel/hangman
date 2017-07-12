@@ -1,7 +1,11 @@
 <div ng-controller="GameController as g">
-	<input autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess">
+	<input autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
 	<p>Failed letters: {{g.failedLetters.join(',')}}</p>
+	<p>{{g.bodyPart}}</p>
 	<ul ng-if="g.wordArray">
 		<li ng-repeat="letter in g.wordArray track by $index">_{{g.answer[$index]}}_</li>
 	</ul>
+	<p ng-if="g.loss">
+		yer lost Harry
+	</p>
 </div>
