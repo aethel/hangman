@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html ng-app="hang">
-	<head>
-		<meta charset="utf-8">
-		<title>Hangman</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link href="styles/main.min.css" rel="stylesheet" />
-	</head>
-	<body>
-		<div ng-include="'components/shell/shell.html'"></div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hangman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="styles/main.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div ng-include="'components/shell/shell.html'"></div>
 
 
-		<script type="text/javascript" src="https://opensource.keycdn.com/angularjs/1.6.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://opensource.keycdn.com/angularjs/1.6.5/angular.min.js"></script>
 
-		<script src="components/app.module.js"></script>
-		<script src="components/core/app.core.js"></script>
-		<script src="components/core/constants.js"></script>
-		<script src="components/core/data.service.js"></script>
+  <script src="components/app.module.js"></script>
+  <script src="components/core/app.core.js"></script>
+  <script src="components/core/constants.js"></script>
+  <script src="components/core/data.service.js"></script>
 
-		<script src="components/shell/layout.module.js"></script>
-		<script src="components/shell/shell.controller.js"></script>
+  <script src="components/shell/layout.module.js"></script>
+  <script src="components/shell/shell.controller.js"></script>
 
-		<script src="components/game/game.module.js"></script>
-		<script src="components/game/game.controller.js"></script>
-	</body>
+  <script src="components/game/game.module.js"></script>
+  <script src="components/game/game.controller.js"></script>
+</body>
+
 </html>
