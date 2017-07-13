@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	position: relative;
 	z-index: 1;
+	max-width: 100%;
 }
 
 .answer__list {
@@ -9,7 +10,7 @@
 }
 
 .answer__item {
-	font-size: 3.6rem;
+	font-size: calc(1vw + 2rem);
 	border-radius: 0.5rem;
 	background: $darkBg;
 	width: 6.6rem;

@@ -1,5 +1,5 @@
 <div ng-controller="GameController as g" class="game-wrapper">
-	<figure ng-show="g.failedLetters">
+	<figure class="hangman" ng-show="g.failedLetters">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 142 277" preserveAspectRatio="xMinYMin meet">
 		>
 		  <title>Corpse</title>
@@ -42,7 +42,7 @@
 		<p class="missed-letters__content">{{g.failedLetters.join(' ')}}</p>
 	</div>
 	<div class="answer">
-		<input class="answer__input" autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
+		<input class="answer__input" autofocus ng-disabled="g.loss" type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
 		<ul class="answer__list" ng-if="g.wordArray">
 			<li class="answer__item" ng-repeat="letter in g.wordArray track by $index">
 				<span class="answer__content">{{g.answer[$index]}}</span>
@@ -50,10 +50,11 @@
 		</ul>
 	</div>
 	<div class="overlay" ng-if="g.loss">
-			<header>
+		<div class="overlay__wrapper">
+			<header class="overlay__heading">
 				<h2>Game Over</h2>
 			</header>
 			<button type="button" ng-click="g.restart()" name="button">New Word</button>
-		</p>
+		</div>
 	</div>
 </div>

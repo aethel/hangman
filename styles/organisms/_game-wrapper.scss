@@ -3,6 +3,11 @@
 	overflow: hidden;
 	position: relative;
 	border-radius: 0.5rem;
+	padding: 3.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	height: calc(100vh - 6rem);
+	box-sizing: border-box;
 
 	&:after {
 		content: '';
@@ -17,5 +22,14 @@
 		right: -0.5rem;
 		position: absolute;
 		z-index: 0;
+	}
+
+	.missed-letters {
+		flex: 2;
+		padding: 0 0 0 20rem;
+	}
+
+	.answer {
+		flex: 1 0 100%;
 	}
 }

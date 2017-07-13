@@ -1,8 +1,16 @@
 button {
 	color: $altAccent;
-	border: 0.2rem dashed $altAccent;
-	border-radius: 2.7rem;
+	border: 0.3rem dashed $altAccent;
+	border-radius: 3rem;
 	padding: 1.9rem 4.2rem;
 	text-transform: capitalize;
 	font-size: 1.6rem;
+	font-family: $defaultFonts;
+	text-transform: uppercase;
+	background: transparent;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+	}
 }
