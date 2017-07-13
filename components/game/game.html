@@ -1,4 +1,4 @@
-<div ng-controller="GameController as g">
+<div ng-controller="GameController as g" class="game-wrapper">
 	<figure ng-show="g.failedLetters">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 142 277" preserveAspectRatio="xMinYMin meet">
 		>
@@ -44,7 +44,7 @@
 	<div class="answer">
 		<input class="answer__input" autofocus type="text" name="" value="" ng-keypress="g.keyPressed($event)" ng-model="g.guess"/>
 		<ul class="answer__list" ng-if="g.wordArray">
-			<li class="answer__items" ng-repeat="letter in g.wordArray track by $index">
+			<li class="answer__item" ng-repeat="letter in g.wordArray track by $index">
 				<span class="answer__content">{{g.answer[$index]}}</span>
 			</li>
 		</ul>

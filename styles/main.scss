@@ -1,2 +1,11 @@
+//compile
 @import 'core/reset';
 @import 'core/variables';
+@import 'core/typography';
+
+@import 'atoms/button';
+
+@import 'molecules/answer';
+@import 'molecules/missed-letters';
+
+@import 'organisms/game-wrapper';

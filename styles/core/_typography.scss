@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'aller';
+  src: url('../fonts/AllerDisplay.woff2') format('woff2'),
+       url('../fonts/AllerDisplay.woff') format('woff'),
+       url('../fonts/AllerDisplay.ttf') format('truetype');
+}
+
+html,body {
+	font-size: 62.5%;
+	font-family: $defaultFonts;
+}

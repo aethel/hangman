@@ -1,0 +1,31 @@
+.answer {
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+}
+
+.answer__list {
+	display: flex;
+}
+
+.answer__item {
+	font-size: 3.6rem;
+	border-radius: 0.5rem;
+	background: $darkBg;
+	width: 6.6rem;
+	height: 7rem;
+	position: relative;
+}
+
+.answer__item:not(:last-child) {
+	margin: 0 1rem 0 0;
+}
+
+.answer__content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: $light;
+	text-transform: uppercase;
+}

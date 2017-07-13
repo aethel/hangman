@@ -48,7 +48,7 @@
 
         function activate() {
             return getWord().then(function() {
-                if (vm.word.includes('-')) vm.word = vm.word.replace('-', '');
+                if (vm.word && vm.word.includes('-')) vm.word = vm.word.replace('-', '');
                 console.log('Word received', vm.word);
                 vm.wordArray = [...vm.word];
                 vm.answer = new Array(vm.wordArray.length);
@@ -57,7 +57,7 @@
 
         function getWord() {
             return dataService.get(`${dataUrl}`).then(function(data) {
-                vm.word = data.word.toLowerCase();
+							if (data) vm.word = data.word.toLowerCase();
                 return vm.word;
             })
         }
