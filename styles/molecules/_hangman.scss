@@ -1,3 +1,11 @@
 .hangman {
 	width: calc(10rem + 5vw);
+
+	&:before {
+		content: '';
+		background: url('../images/noose.svg') no-repeat center center / contain transparent;
+		width: 20rem;
+		height: 10rem;
+		display: block;
+	}
 }

@@ -3,10 +3,12 @@
 	position: relative;
 	z-index: 1;
 	max-width: 100%;
+	text-align: right;
 }
 
 .answer__list {
 	display: flex;
+	justify-content: flex-end;
 }
 
 .answer__item {
@@ -29,4 +31,22 @@
 	transform: translate(-50%,-50%);
 	color: $light;
 	text-transform: uppercase;
+}
+
+.answer__input {
+	background: transparent;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 0.2rem solid $darkBg;
+	font-size: 3.6rem;
+	padding: 1rem;
+	font-family: $defaultFonts;
+	width: 10rem;
+	margin: 0 0 2rem 0;
+	text-align: center;
+
+	&:focus {
+		outline: none;
+	}
 }
