@@ -6,7 +6,6 @@
     GameController.$inject = ['dataService', 'dataUrl', '$document'];
 
     function GameController(dataService, dataUrl, $document) {
-        console.log('game loaded');
         let vm = this;
         vm.guess = null;
         vm.keyPressed = keyPressed;
@@ -23,7 +22,6 @@
         createBodyMap();
 
         function keyPressed(event) {
-            console.log(event.key, vm.guess);
             checkWord(event.key)
         }
 
@@ -57,7 +55,7 @@
 
         function getWord() {
             return dataService.get(`${dataUrl}`).then(function(data) {
-							if (data) vm.word = data.word.toLowerCase();
+                if (data) vm.word = data.word.toLowerCase();
                 return vm.word;
             })
         }
@@ -73,9 +71,9 @@
             return bodyPartsArr.includes(bodypart);
         }
 
-				function hasFailed (character) {
-					return vm.failedLetters.some(c => c === character);
-				}
+        function hasFailed(character) {
+            return vm.failedLetters.some(c => c === character);
+        }
 
         function restart() {
             vm.failedLetters = [];

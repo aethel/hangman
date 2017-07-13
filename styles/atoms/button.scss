@@ -9,8 +9,8 @@ button {
 	text-transform: uppercase;
 	background: transparent;
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		cursor: pointer;
 	}
 }

@@ -13,16 +13,16 @@
         return service;
 
         function get(url) {
-          return $http.get(url)
-            .then(success)
-            .catch(failed);
+            return $http.get(url)
+                .then(success)
+                .catch(failed);
 
-          function success (response) {
-              return response.data;
+            function success(response) {
+                return response.data;
             }
 
-           function failed (error) {
-              console.log(`Failure getting data: ${error.data}`);
+            function failed(error) {
+                console.log(`Failure getting data: ${error.data}`);
             }
         }
     }
